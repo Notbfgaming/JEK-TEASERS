@@ -1,26 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JEK Teaser</title>
+<title>JEK</title>
 
 <style>
 body{
   background:black;
-  color:white;
+  color:#ff2a2a;
   height:100vh;
   margin:0;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-family:Arial;
-  font-size:60px;
+  font-family:monospace;
+  overflow:hidden;
+}
+
+/* text */
+h1{
+  font-size:80px;
+  letter-spacing:15px;
+  animation:flicker 2s infinite;
+  text-shadow:
+    0 0 5px #ff0000,
+    0 0 20px #ff0000,
+    0 0 40px #ff0000;
+}
+
+/* flicker effect */
+@keyframes flicker{
+  0%,18%,22%,25%,53%,57%,100%{opacity:1;}
+  20%,24%,55%{opacity:0.2;}
+}
+
+/* static overlay */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.02) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events:none;
 }
 </style>
 
 </head>
 <body>
 
-Teaser Coming Soon...
+<h1>SONG TEASER COMING SOON..</h1>
 
 </body>
 </html>
